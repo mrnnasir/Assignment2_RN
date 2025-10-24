@@ -1,247 +1,120 @@
-/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
-
-/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
-
-html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
+/* ====== Reset basic styles and set page defaults ====== */
+body {
+  margin: 5px;                         /* Removes default browser margin around the page */
+  font-family: Arial, sans-serif;     /* Sets the main font for all text */
+  background: #fafafa;                /* Light grey background for a clean look */
 }
 
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
+/* ====== Heading ====== */
+h1 {
+  text-align: center;
+  text-decoration: underline;
+  color: green;
 }
 
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
+/* ====== Wrapper for the entire app ====== */
+.wrapper1 {
+  display: flex;                      /* Enables Flexbox layout for child elements */
+  flex-direction: column;             /* Arranges children (buttons, outputs) vertically */
+  align-items: center;                /* Centers all children horizontally in the wrapper */
+  justify-content: flex-start;        /* Aligns children at the top of the container */
+  min-height: 100vh;                  /* Makes the wrapper fill at least the full viewport height */
+  padding: 20px;                      /* Adds spacing inside the wrapper */
 }
 
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
+/* ====== Button container at the top ====== */
+.btn-container {
+  display: flex;                      /* Places all button sets side by side */
+  justify-content: center;            /* Centers the entire button row horizontally */
+  flex-wrap: wrap;                    /* Allows buttons to wrap to the next line if screen is too narrow */
+  gap: 15px;                          /* Adds equal spacing between each button */
+  margin-bottom: 20px;                /* Adds space below the button row before next section */
 }
 
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
+/* ====== Common button styling ====== */
+button {
+  background-color: #007bff;          /* Sets a nice blue background color */
+  color: white;                       /* Makes button text white for contrast */
+  border: none;                       /* Removes default button border */
+  padding: 10px 16px;                 /* Adds vertical and horizontal inner spacing */
+  border-radius: 6px;                 /* Slightly rounds button corners */
+  cursor: pointer;                    /* Changes cursor to a hand on hover */
+  transition: 0.2s;                   /* Smooth transition for hover effects */
 }
 
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
+/* ====== Button hover effect ====== */
+button:hover {
+  background-color: #0056b3;          /* Darker blue when user hovers over button */
 }
 
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-  resize: vertical;
+/* ====== “Filtered Category” section under top buttons ====== */
+.set2 {
+  text-align: center;                 /* Centers text and elements inside this section */
+  margin-bottom: 30px;                /* Adds spacing below this section */
 }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden,
-[hidden] {
-  display: none !important;
+/* ====== Text input box styling ====== */
+.set2 .text {
+  padding: 8px;                       /* Inner padding for comfortable typing */
+  width: 220px;                       /* Fixed width for consistency */
+  border-radius: 5px;                 /* Rounded edges for softer look */
+  border: 1px solid #ccc;             /* Light grey border for definition */
 }
 
-/*
- * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
- */
-
-.visually-hidden {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
+/* ====== Text Box ====== */
+.text {
+  font-weight: bold;
+  font-size: 16px;
 }
 
-/*
- * Extends the .visually-hidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-
-.visually-hidden.focusable:active,
-.visually-hidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
+/* ====== Information for the user ====== */
+.info {
+  font-weight: bold;
+  font-size: 20px;
+  color: #007bff;
 }
 
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-  visibility: hidden;
+/* ====== Layout containers for output sections ====== */
+.output_container1,
+.output_container2 {
+  display: flex;                      /* Uses Flexbox to arrange output boxes */
+  justify-content: space-between;     /* Puts child boxes to left & right edges of container */
+  align-items: flex-start;            /* Aligns top edges of all boxes (not centered vertically) */
+  width: 90%;                         /* Restricts container width to 90% of page for margins */
+  flex-wrap: wrap;                    /* Allows boxes to wrap on smaller screens */
+  gap: 20px;                          /* Adds consistent spacing between output boxes */
 }
 
-/*
- * Clearfix: contain floats
- *
- * The use of `table` rather than `block` is only necessary if using
- * `::before` to contain the top-margins of child elements.
- */
-
-.clearfix::before,
-.clearfix::after {
-  content: "";
-  display: table;
+/* ====== Specifically for left-side outputs ====== */
+.output_container2 {
+  justify-content: flex-start;        /* Aligns items to the left (instead of spacing them apart) */
 }
 
-.clearfix::after {
-  clear: both;
+/* ====== Left-side box (Name of meals, Meal details, etc.) ====== */
+#mealListDiv {
+  flex: 1 1 45%;                      /* Each box starts at 45% width but can grow/shrink */
+  min-width: 300px;                   /* Prevents box from becoming too narrow */
 }
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+/* ====== Right-side boxes (Meals by Category, Group by, etc.) ====== */
+#mealSec,
+#countMealAppDiv,
+#grpByDiv {
+  flex: 1 1 45%;                      /* Each right-side box behaves like left side: flexible width */
+  min-width: 300px;                   /* Keeps box readable on smaller screens */
 }
 
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
+/* ====== Visual styling for each output box ====== */
+.CountMealApp, .mealListCl, .groupByDiv, .mealCatDiv {
+  background: #fff;                   /* White background for clean contrast */
+  border-radius: 8px;                 /* Softly rounded corners */
+  padding: 15px;                      /* Inner spacing so text doesn’t touch edges */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth and separation from background */
 }
 
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-
-@media print {
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
-
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
-  }
-
-  pre {
-    white-space: pre-wrap !important;
-  }
-
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
+/* ====== Footer ====== */
+footer {
+  text-align: center;
+  font-weight: normal;
+  font-size: 12px;
 }
-

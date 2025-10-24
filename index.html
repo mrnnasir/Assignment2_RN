@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>World of Amazing Meals</title>
   <link rel="stylesheet" href="css/style.css">
   <meta name="description" content="">
 
@@ -23,9 +23,60 @@
 </head>
 
 <body>
-
   <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
+<h1>World of Amazing Meals!!</h1>
+
+  <div class="wrapper1">
+    <div class="btn-container">
+
+      <div class="set1">
+        <button class="btn1" id="mealList">Name of meals</button>
+      </div>
+
+      <div class="set5">
+        <button class="btn5" id="reshapeBtn">Meal Details</button>
+      </div>
+
+      <div class="set6">
+        <button class="btn6" id="freqBtn">Ingredient Frequency</button>
+       </div>
+
+      <div class="set3">
+        <button class="btn3" id="mealByCat">Meals by Category</button>
+
+      </div>
+
+      <div class="set4">
+        <button class="btn4" id="groupBy">Group by</button>
+
+      </div>
+    </div>
+
+      <!--Filtered Category -->
+    <div class="set2">
+      <p class="info">Please find the meal available with your chosen category!</p>
+      <input type="text" class="text" id="catName" placeholder="Category name...">
+      <br>
+      <br>
+      <button class="btn2" id="mealCat">Meal Category</button>
+    </div>
+    <br>
+    <br>
+
+    <div class="output_container1">
+      <div class="CountMealApp" id="countMealAppDiv"></div>
+      <div class="groupByDiv" id="grpByDiv"></div>
+      <div class="mealCatDiv" id="mealSec"></div>
+    </div>
+    <br>
+    <div class="output_container2">
+      <div class="mealListCl" id="mealListDiv"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>Test Meal Site | Built with ❤️ by Raihan Nasir | Student of Medieinstitutet</p>
+  </footer>
   <script src="js/app.js"></script>
 
 </body>
