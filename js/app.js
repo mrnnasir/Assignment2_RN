@@ -157,6 +157,7 @@ function printScreen3(msg) {
   countMealAppDiv.appendChild(mealCatDiv);
 }
 
+//To listen button function about the request---
 mealByCat.addEventListener("click", function() {
   let removeElement = document.getElementsByClassName('mealCatDivCl');
   [...removeElement].forEach(el => el.remove());
@@ -203,6 +204,7 @@ function printScreen4(msg) {
   grpByDiv.appendChild(groupDiv);
 }
 
+//To listen button function about the request---
 groupBy.addEventListener("click", function() {
   let removeElement = document.getElementsByClassName('groupDivCl');
   [...removeElement].forEach(el => el.remove());
@@ -219,21 +221,19 @@ groupBy.addEventListener("click", function() {
 })
 
 //Select & Shape---
-
 function reshapeMeals(items) {
   return items.map(meal => {
-    // Extract only desired fields
+    //Extract only desired fields
     const ingredients = [];
 
-    // Loop through ingredient keys (strIngredient1 ... strIngredient20)
+    //Since there is no array for the Ingredients, I need to loop through 'ingredient' keys (strIngredient1 ... strIngredient25)
     for (let i = 1; i <= 25; i++) {
-      const ing = meal[`strIngredient${i}`];
-      if (ing) ingredients.push(ing);
+      const ing = meal[`strIngredient${i}`]; //Assigning the value of the 'i' index to 'ing' variable
+      if (ing) ingredients.push(ing); //If 'ing' is Truthy, value will be pushed to the 'ingredients' list
     }
 
-    // Return brief summary
+    //Return summary
     return {
-      id: meal.idMeal,
       name: meal.strMeal,
       category: meal.strCategory,
       ingredients: ingredients
@@ -241,21 +241,22 @@ function reshapeMeals(items) {
   });
 }
 
+//To listen button function about the request---
 reshapeBtn.addEventListener('click', function() {
   // remove past reshaped elements
   let removeElement = document.getElementsByClassName('mealLiD');
   [...removeElement].forEach(el => el.remove());
 
-  // reshape data
+  //Reshape data
   const reshaped = reshapeMeals(fullMeal);
 
-  printScreen1('<span style="color: purple;"><b><u>Meal Details</u></b></span>')
+  printScreen1('<span style="color: coral;"><b><u>Meal Details</u></b></span>')
 
   reshaped.forEach(meal => {
     printScreen1(
-      `<span style="color: red;"><b>${meal.name}</b></span> <span style="color: green;">(${meal.category})</span><br>
-      ID: ${meal.id}<br>
-      <span style="color: darkviolet;"><b>Ingredients:</b></span> <b>${meal.ingredients.join(', ')}</b>`
+      `<span style="color: darkviolet;"><b> Meal Name: </b></span> <span style="color: red;"><b>${meal.name}</b></span><br>
+<span style="color: darkviolet;"><b> Meal Category: </b></span> <span style="color: green;"><b><i> ${meal.category} </i></b></span><br>
+<span style="color: darkviolet;"><b> Meal Ingredients: </b></span> <b>${meal.ingredients.join(', ')}</b>`
     );
   });
 });
@@ -287,8 +288,9 @@ function ingredientFrequency(items) {
   return freqMap;
 }
 
+//To listen button function about the request---
 freqBtn.addEventListener('click', function() {
-  // remove old ingredient frequency display
+  //Remove old ingredient frequency display
   let removeElement = document.getElementsByClassName('mealLiD');
   [...removeElement].forEach(el => el.remove());
 
